@@ -1,10 +1,10 @@
 # EmployeeClassHW5
-HW5EmployeeClass
-Assignment 5This assignment can be submitted as many times as you want.  
+HW5-EmployeeClass
+Assignment 5- This assignment can be submitted as many times as you want.  
 
-However, onlythe last submission will be graded.  The earlier versions will not be graded.  
+However, only the last submission will be graded.  The earlier versions will not be graded.  
 So make sure that your final submission works and produces the correct results.  Please do 
-not cheat or copy.Write  a  program  to  enter  employee  data  into  an  ArrayList  of  type  Employee.  
+not cheat or copy. Write  a  program  to  enter  employee  data  into  an  ArrayList  of  type  Employee.  
 The  dataincludes employee name,  employee Social Security Number,  employee job title,  and employeesalary.  
 The  maximum  number  of  employees  is  100,  but  your  program  should  work  for  anynumber of employees less than 100. 
 Your program should use two exception classes, one calledSSNLengthException for Social Security number 
