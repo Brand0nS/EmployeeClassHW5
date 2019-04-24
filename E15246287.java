@@ -3,7 +3,8 @@ import java.time.LocalDate;
 import java.util.*;
 
 class Person{
-	private String name, SSN;
+	private String name;
+	private static String SSN;
 	private LocalDate hireDate;
 	
 	
@@ -17,11 +18,11 @@ class Person{
 	
 
 	public void setSSN(String s) {
-		this.SSN=s;
+		SSN=s;
 	}
 	
-	public String getSSN() {
-		return this.SSN;
+	public static String getSSN() {
+		return SSN;
 	}
 	
 	public LocalDate getHireDate(){
@@ -102,6 +103,22 @@ class Employee extends Person{
 }
 
 
+class EmployeeRecord {
+	
+	public static boolean isValidSSN(String s) {
+		if(s.length()<9) {
+			return false;
+		}
+		
+		for(int p=0;p<9;p++) {
+			if(!Character.isDigit(s.charAt(p)))
+				return false;
+		}
+		return true;
+	}
+	
+	
+}
 
 public class E15246287 extends Employee{
 
@@ -115,16 +132,27 @@ public class E15246287 extends Employee{
     System.out.println("Enter the amount of employees you want: ");
     numOfEmployees=input.nextInt();
     for(int n=0; n < numOfEmployees; n++) {
-    	System.out.println("What are the players names?");//prompts players for their names
+    	System.out.println("What is the  name of Employee" + numOfEmployees + " ?");
 		String nameStore = input.next(); 
-		EmployeeList.add(new Employee(nameStore)); //Create an ar
-    }
-	System.out.println("Please enter your name, social security number, address, position title, salary and hireDate: ");	
-	
-	Employee.setName("Brandon");	
+		System.out.println("What is the SSN of Employee" + numOfEmployees + " ?");
+		String ssnStore= input.next();
+		System.out.println("What is the salary of Employee" + numOfEmployees + " ?");
+		double salaryStore= input.nextDouble();
+		System.out.println("What is the status of Employee" + numOfEmployees + " ?");
+		String statusStore= input.next();
+		EmployeeList.add(new Employee(nameStore,ssnStore,salaryStore,statusStore)); //Create an ar
+                }
 	
 		}
-    
+		
+		catch(SSNLengthException e) {
+			System.out.println(e.getMessage());
+			}
+		if(getSSN().length()<9||getSSN().length()>9) {
+			throw new SSNLengthException("The length of the Social Security number is invalid. Please"
+					+ "try again! ");
+		}
+      
 	}
 
 }
